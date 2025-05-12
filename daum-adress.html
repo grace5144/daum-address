@@ -1,0 +1,22 @@
+!DOCTYPE html
+html lang=ko
+head
+  meta charset=UTF-8 
+  title주소 검색title
+  script src=httpst1.daumcdn.netmapjsapibundlepostcodeprodpostcode.v2.jsscript
+  style
+    html, body { margin 0; padding 0; }
+    #wrap { width 100vw; height 100vh; }
+  style
+head
+body
+  div id=wrapdiv
+  script
+    new daum.Postcode({
+      oncomplete function(data) {
+        window.ReactNativeWebView.postMessage(data.address);
+      }
+    }).embed(document.getElementById('wrap'));
+  script
+body
+html
